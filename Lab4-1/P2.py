@@ -1,4 +1,4 @@
-from P2 import BankAccount
+from P2f import BankAccount
 
 # Create accounts
 john = BankAccount("John", "saving", 500)
