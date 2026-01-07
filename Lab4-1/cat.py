@@ -1,6 +1,6 @@
 """
-Narudee Chakitdee
-673040147-9
+Chawanagorn Thiangsiri
+673040660-7
 Lab4-1 P1
 """
 from datetime import datetime
