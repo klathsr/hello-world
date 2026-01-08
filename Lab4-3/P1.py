@@ -76,11 +76,8 @@ class Magazine(LibraryItem):
 
 book = Book("Harry Potter", "B001", "J.K. Rowling")
 book.set_page_count(500)
-print(book.display_info()) 
 book.check_out()
-print(book.get_status())
 book.return_item()
-print(book.get_status())
 
 print("\nTesting TextBook:")
 textbook = TextBook("Math", "T1", "ronaldo", "Math", "Grade 1")
