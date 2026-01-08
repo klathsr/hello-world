@@ -14,7 +14,7 @@ class LibraryItem:
         self._checked_out = False
 
     def get_status(self):
-        return "Checked out" if self.__checked_out else "Available"
+        return "Checked out" if self._checked_out else "Available"
     
     def check_out(self):
         # if checked_out is False (item still in lib)
@@ -26,7 +26,7 @@ class LibraryItem:
     
     def display_info(self):
         print(f"Item: {self.title}")
-        print(f" ID: {self.item_id}")
+        print(f" ID: {self._id}")
         print(f"status: {self.get_status()}")
 
 
@@ -52,7 +52,7 @@ class TextBook(Book):
         self.subject = subject
         self.grade_level = grade_level
     
-    def display_course_info(self):
+    def display_info(self):
         print(f"Title: {self.title}")
         print(f"Author: {self.author}")
         print(f"Pages: {self.pages_count}")
@@ -77,14 +77,14 @@ class Magazine(LibraryItem):
 book = Book("Harry Potter", "B001", "J.K. Rowling")
 book.set_page_count(500)
 book.check_out()
-book.return_item()
+book.display_info()
 
 print("\nTesting TextBook:")
 textbook = TextBook("Math", "T1", "ronaldo", "Math", "Grade 1")
 textbook.set_page_count(300)
-textbook.display_course_info()
+textbook.display_info()
 textbook.check_out()
-textbook.display_course_info()
+textbook.display_info()
 
 print("\nTesting Magazine:")
 magazine = Magazine("football", "cr7", "Lm10")
