@@ -25,7 +25,10 @@ class LibraryItem:
         return False
     
     def display_info(self):
-        print(f"Item: {self.title} | ID: {self.item_id} | status: {self.get_status()}")
+        print(f"Item: {self.title}")
+        print(f" ID: {self.item_id}")
+        print(f"status: {self.get_status()}")
+
 
 class Book(LibraryItem):
     def __init__(self, title, item_id, author):
@@ -56,4 +59,39 @@ class TextBook(Book):
         print(f"Subject: {self.subject}")
         print(f"Grade Level: {self.grade_level}")
         print(f"Status: {self.get_status()}")
+
+class Magazine(LibraryItem):
+    def __init__(self, title, item_id, issue_number):
+        super().__init__(title, item_id)
+        self.issue_number = issue_number
+        now = datetime.now()
+        self.month = now.month
+        self.year = now.year
+    
+    def display_issue(self):
+        print(f"Title: {self.title}")
+        print(f"Issue Number: {self.issue_number}")
+        print(f"Date: {self.month}/{self.year}")
+        print(f"Status: {self.get_status()}")
+
+book = Book("Harry Potter", "B001", "J.K. Rowling")
+book.set_page_count(500)
+print(book.display_info()) 
+book.check_out()
+print(book.get_status())
+book.return_item()
+print(book.get_status())
+
+print("\nTesting TextBook:")
+textbook = TextBook("Math", "T1", "ronaldo", "Math", "Grade 1")
+textbook.set_page_count(300)
+textbook.display_course_info()
+textbook.check_out()
+textbook.display_course_info()
+
+print("\nTesting Magazine:")
+magazine = Magazine("football", "cr7", "Lm10")
+magazine.display_issue() 
+magazine.check_out()
+magazine.display_issue() 
         
