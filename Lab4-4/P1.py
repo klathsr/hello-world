@@ -19,3 +19,5 @@ if __name__ == "__main__":
     print(kitchen1.calculate_area())
     print(kitchen1.calculate_counter_space())
     print(kitchen1.get_recommended_lighting())
+
+    print(kitchen1.calculate_counter_space.__doc__)

@@ -33,7 +33,7 @@ class Bedroom(Room):
 
    
     def get_recommended_lighting(self):
-       return f"10-20 lumens per sq ft"
+       return 10
 
 class Kitchen(Room):
     def __init__(self, length, width,has_island = True):
@@ -46,20 +46,24 @@ class Kitchen(Room):
 
     
     def get_recommended_lighting(self):
-       return f"70-80 lumens per sq ft"
+       return 80 
 
 
     def calculate_counter_space(self):
         """
         Calculates the available counter space in the kitchen.
 
-        The counter space is divided into island counter space and wall counter space
-        based on whether the kitchen has an island.
-
+        Args: None
+        
         Returns:
         tuple[float, float]: A tuple containing:
         - island_area: Counter space provided by the island (in square feet)
         - wall_area: Counter space along the walls (in square feet)
+
+         Example:
+         kitchen = Kitchen(20, 15, has_island=True)
+         kitchen.calculate_counter_space()
+        (60.0, 75.0)
         """
         total_area = self.calculate_area()
 
