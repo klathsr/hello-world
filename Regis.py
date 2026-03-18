@@ -85,6 +85,7 @@ class StudentRegistrationForm(QMainWindow):
         self.program_combo = QComboBox()
         self.program_combo.addItem("Select your program")
         self.program_combo.addItems([
+            "Chemical Engineering"
             "Computer Engineering",
             "Digital Media Engineering",
             "Environmental Engineering",
@@ -92,7 +93,12 @@ class StudentRegistrationForm(QMainWindow):
             "Semiconductor Engineering",
             "Mechanical Engineering",
             "Industrial Engineering",
-            "Logistic Engineering"
+            "Logistic Engineering",
+            "Electronic Engineering",
+            "Telecommunication Engineering",
+            "Agricultural Engineering",
+            "Civil Engineering",
+            "ARIS"
         ])
         main_layout.addWidget(self.program_combo)
         main_layout.addSpacing(10)
@@ -114,7 +120,7 @@ class StudentRegistrationForm(QMainWindow):
         self.submit_btn = QPushButton("Submit Registration")
         self.submit_btn.setFixedHeight(35)
         main_layout.addWidget(self.submit_btn)
-        
+
 
 if __name__ == "__main__":
     QLocale.setDefault(QLocale(QLocale.English))
